@@ -1,0 +1,18 @@
+.card {
+  position: absolute;
+  width: 272px;
+  height: 208px;
+  display: block;
+  text-align: center;
+}
+
+.price {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.icon {
+  margin-top: 11px;
+}
