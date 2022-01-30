@@ -1,6 +1,6 @@
 .section {
   width: 600px;
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   text-align: left;
-  border: 1px solid plum;
 }

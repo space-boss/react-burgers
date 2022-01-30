@@ -1,10 +1,16 @@
 .header {
-  max-width: 1240px;
-  margin: 0 auto;
+  width: 100vw;
+  margin-top: 40px;
   background-color: #1c1c21;
-  padding: 16px;
+  padding: 24px 0;
   height: 88px;
   display: flex;
+}
+
+.menu {
+  display: flex;
+  width: 1240px;
+  margin: 0 auto;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -12,11 +18,7 @@
 .menuElement {
   display: flex;
   flex-direction: row;
-  padding: 20px;
-}
-
-.logo {
-  margin-top: 20px;
+  padding: 11px 20px 11px 0;
 }
 
 .menuBlock {

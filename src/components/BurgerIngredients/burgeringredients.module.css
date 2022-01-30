@@ -1,4 +1,19 @@
 .section {
-  composes: section from "../BurgerConstructor/burgerConstructor.module.css";
-  background-color: blueviolet;
+  width: 600px;
+  height: 100px;
+  text-align: left;
+}
+
+.total {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
