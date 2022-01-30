@@ -3,7 +3,13 @@
   flex-direction: column;
   gap: 10px;
   width: fit-content;
-  max-height: 400px;
+}
+
+.unlockedCards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 250px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #2f2f37, #8585ad;
@@ -14,6 +20,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: fit-content;
 }
 
 .specialCard {
