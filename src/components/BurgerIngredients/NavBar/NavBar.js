@@ -2,22 +2,30 @@ import React from "react";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import styles from "./navBar.module.css";
 
-function NavBar() {
+function NavBar(props) {
   const [current, setCurrent] = React.useState("one");
+
+  function handleMenuClick(ref) {
+    setCurrent();
+    ref.current.scrollIntoView();
+  }
 
   return (
     <div className={styles.menu}>
       <div className={styles.tab}>
-        {" "}
-        <Tab value="one" active={current === "one"} onClick={setCurrent}>
+        <Tab
+          value="one"
+          active={current === "one"}
+          onClick={() => handleMenuClick(props.bunsRef)}
+        >
           Булки
-        </Tab>{" "}
+        </Tab>
       </div>
       <div className={styles.tab}>
         <Tab
           value="two"
           active={current === "two"}
-          onClick={setCurrent}
+          onClick={() => handleMenuClick(props.sauceRef)}
           style={{ minWidth: "200px" }}
         >
           Соусы
@@ -27,11 +35,11 @@ function NavBar() {
         <Tab
           value="three"
           active={current === "three"}
-          onClick={setCurrent}
+          onClick={() => handleMenuClick(props.mainsRef)}
           style={{ minWidth: "200px" }}
         >
           Начинки
-        </Tab>{" "}
+        </Tab>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import React from "react";
 import propTypes from "prop-types";
 import {
   Counter,
@@ -6,11 +7,19 @@ import {
 import styles from "./ingredientCard.module.css";
 
 function IngredientCard(props) {
-  console.log(props.data.image);
+  const [counterValue, setCounterValue] = React.useState(0);
+
+  const handleCounterClick = () => {
+    setCounterValue(counterValue + 1);
+  };
+
   return (
     <div className={`${styles.card} ml-4 mr-2 mt-6 mb-8`}>
       <img src={props.data.image} alt={props.data.name} />
-      <Counter />
+      <button className={styles.button} onClick={handleCounterClick}>
+        <Counter size="default" count={counterValue} />
+      </button>
+
       <div className={styles.price}>
         <h3 className="text text_type_main-medium m-2">{props.data.price}</h3>
         <div className={styles.icon}>
