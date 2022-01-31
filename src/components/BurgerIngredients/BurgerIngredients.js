@@ -1,25 +1,49 @@
-import ingredientStyle from "./burgerIngredients.module.css";
-import IngredientsList from "./IngredientsList/IngredientsList";
-import {
-  Button,
-  CurrencyIcon,
-} from "@ya.praktikum/react-developer-burger-ui-components";
+import propTypes from "prop-types";
+import styles from "./burgerIngredients.module.css";
+import NavBar from "./NavBar/NavBar";
+import IngredientCard from "./IngredientCard/IngredientCard";
 
 function BurgerIngredients(props) {
   return (
-    <section className={`${ingredientStyle.section} pt-25 pl-4 pr-4`}>
-      <IngredientsList />
-      <div className={`${ingredientStyle.total} ${"mt-10 pr-2"}`}>
-        <div className={`${ingredientStyle.price} ${"mr-10"}`}>
-          <div className={"text text_type_digits-medium mr-2"}>610</div>
-          <CurrencyIcon type="primary" />
+    <section className={styles.section}>
+      <h1 className="text text_type_main-large pt-10 pb-5">Соберите бургер</h1>
+      <NavBar />
+      <div className="mt-10">
+        <h2 className="text text_type_main-medium mb-6">Булки</h2>
+        <div className={`${styles.cardList} mt-6 `}>
+          {props.data.map((item) => {
+            if (item.type === "bun") {
+              return <IngredientCard data={item} key={item._id} />;
+            }
+          })}
         </div>
-        <Button type="primary" size="large">
-          Оформить заказ
-        </Button>
+      </div>
+      <div className="mt-10">
+        <h2 className="text text_type_main-medium mb-6">Соусы</h2>
+        <div className={`${styles.cardList} mt-6 `}>
+          {props.data.map((item) => {
+            if (item.type === "sauce") {
+              return <IngredientCard data={item} key={item._id} />;
+            }
+          })}
+        </div>
+      </div>
+      <div className="mt-10">
+        <h2 className="text text_type_main-medium mb-6">Начинки</h2>
+        <div className={`${styles.cardList} mt-6 `}>
+          {props.data.map((item) => {
+            if (item.type === "main") {
+              return <IngredientCard data={item} key={item._id} />;
+            }
+          })}
+        </div>
       </div>
     </section>
   );
 }
+
+BurgerIngredients.propTypes = {
+  data: propTypes.array,
+};
 
 export default BurgerIngredients;

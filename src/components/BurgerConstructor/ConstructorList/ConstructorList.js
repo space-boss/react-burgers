@@ -2,12 +2,12 @@ import {
   ConstructorElement,
   DragIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
-import ingredientsListStyle from "./ingredientsList.module.css";
+import styles from "./constructorList.module.css";
 
-function IngredientsList() {
+function ConstructorList() {
   return (
-    <div className={`${ingredientsListStyle.ingredientCards}`}>
-      <div className={`${ingredientsListStyle.specialCard} pl-5 pr-2`}>
+    <div className={`${styles.ingredientCards}`}>
+      <div className={`${styles.specialCard} pl-5 pr-2`}>
         <ConstructorElement
           type="top"
           isLocked={true}
@@ -16,16 +16,16 @@ function IngredientsList() {
           thumbnail={"https://code.s3.yandex.net/react/code/meat-02.png"}
         />
       </div>
-      <div className={`${ingredientsListStyle.unlockedCards} pr-2`}>
-        <div className={ingredientsListStyle.card}>
-          <DragIcon className={ingredientsListStyle.icon} type="primary" />
+      <div className={`${styles.unlockedCards} pr-2`}>
+        <div className={styles.card}>
+          <DragIcon className={styles.icon} type="primary" />
           <ConstructorElement
             text="Краторная булка N-200i (верх)"
             price={50}
             thumbnail={"https://code.s3.yandex.net/react/code/meat-02.png"}
           />
         </div>
-        <div className={ingredientsListStyle.card}>
+        <div className={styles.card}>
           <DragIcon type="primary" />
           <ConstructorElement
             text="Краторная булка N-200i (верх)"
@@ -33,7 +33,7 @@ function IngredientsList() {
             thumbnail={"https://code.s3.yandex.net/react/code/meat-02.png"}
           />
         </div>
-        <div className={ingredientsListStyle.card}>
+        <div className={styles.card}>
           <DragIcon type="primary" />
           <ConstructorElement
             text="Краторная булка N-200i (верх)"
@@ -43,7 +43,7 @@ function IngredientsList() {
         </div>
       </div>
 
-      <div className={`${ingredientsListStyle.specialCard} pl-5 pr-2`}>
+      <div className={`${styles.specialCard} pl-5 pr-2`}>
         <ConstructorElement
           type="bottom"
           isLocked={true}
@@ -56,4 +56,4 @@ function IngredientsList() {
   );
 }
 
-export default IngredientsList;
+export default ConstructorList;

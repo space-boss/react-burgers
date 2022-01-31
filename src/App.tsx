@@ -11,8 +11,8 @@ function App() {
     <div className={styles.app}>
       <AppHeader />
       <main className={styles.main}>
-        <BurgerConstructor data={data} />
         <BurgerIngredients data={data} />
+        <BurgerConstructor data={data} />
       </main>
     </div>
   );
