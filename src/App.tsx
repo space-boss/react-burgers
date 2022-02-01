@@ -10,14 +10,14 @@ const BURGER_API_URL = "https://norma.nomoreparties.space/api/ingredients";
 
 function App() {
   const [data, setData] = React.useState([]);
-  const [loading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
   const [loadingError, setLoadingError] = React.useState("");
 
   React.useEffect(() => {
     const getIngredients = () => {
+      setIsLoading(true);
       fetch(BURGER_API_URL)
         .then((res) => {
-          setIsLoading(true);
           return res.json();
         })
         .then((items) => {
@@ -25,7 +25,7 @@ function App() {
           setIsLoading(false);
           setData(items.data);
         })
-        .catch((err) => {
+        .catch(() => {
           setIsLoading(false);
           setLoadingError("Не удалось получить данные с сервера");
           console.log(loadingError);

@@ -1,5 +1,6 @@
 import styles from "./burgerConstructor.module.css";
-import IngredientsList from "./ConstructorList/ConstructorList";
+import ConstructorList from "./ConstructorList/ConstructorList";
+import propTypes from "prop-types";
 import {
   Button,
   CurrencyIcon,
@@ -8,7 +9,7 @@ import {
 function BurgerConstructor(props) {
   return (
     <section className={`${styles.section} pt-25 pl-4 pr-4`}>
-      <IngredientsList />
+      <ConstructorList data={props.data} />
       <div className={`${styles.total} ${"mt-10 pr-2"}`}>
         <div className={`${styles.price} ${"mr-10"}`}>
           <div className={"text text_type_digits-medium mr-2"}>610</div>
@@ -21,5 +22,9 @@ function BurgerConstructor(props) {
     </section>
   );
 }
+
+BurgerConstructor.propTypes = {
+  data: propTypes.array,
+};
 
 export default BurgerConstructor;
