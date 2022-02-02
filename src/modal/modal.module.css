@@ -1,0 +1,31 @@
+.modal {
+  visibility: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalOverlay {
+  visibility: hidden;
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.modalActive {
+  visibility: visible;
+}
+
+.modalOverlayActive {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modalContent {
+  position: relative;
+  z-index: 1;
+}

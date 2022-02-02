@@ -1,0 +1,14 @@
+.h1 {
+  color: red;
+  width: 500px;
+  height: fit-content;
+  font-size: 76px;
+}
+
+.Card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  height: 400px;
+}

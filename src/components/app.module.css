@@ -18,3 +18,11 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+.Card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  height: 400px;
+}
