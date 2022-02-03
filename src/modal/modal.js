@@ -7,8 +7,15 @@ import styles from "./modal.module.css";
 
 function Modal(props) {
   const modalOpenedClass = props.isOpen ? styles.modalActive : "";
+  const modalRoot = document.getElementById("modal-root");
+  const el = document.createElement("div");
 
-  return (
+  React.useEffect(() => {
+    modalRoot.appendChild(el);
+    return () => modalRoot.removeChild(el);
+  }, []);
+
+  return ReactDOM.createPortal(
     <section
       className={`${styles.modal} ${modalOpenedClass} pt-10 pr-10 pb-15 pl-10`}
     >
@@ -18,7 +25,8 @@ function Modal(props) {
       <button className={styles.closeButton} onClick={props.onClose}>
         <CloseIcon type="primary" />
       </button>
-    </section>
+    </section>,
+    modalRoot
   );
 }
 
