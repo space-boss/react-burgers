@@ -14,7 +14,7 @@ function App() {
   const [data, setData] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [loadingError, setLoadingError] = React.useState("");
-  const [showModal, setShowModal] = React.useState(false);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   React.useEffect(() => {
     const getIngredients = () => {
@@ -37,25 +37,18 @@ function App() {
     getIngredients();
   }, []);
 
-  // тут вставляется ссылка на модальный компонент
-  const closeModal = () => setShowModal(false);
-
-  const openModal = () => {
-    console.log("Clicked!");
-    setShowModal(true);
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
   };
 
   return (
     <div className={styles.app}>
+      <Modal onClose={toggleModal} isOpen={isModalOpen} />
       <AppHeader />
-      <button onClick={openModal}>Open Modal</button>
       <main className={styles.main}>
-        <BurgerIngredients data={data} />
+        <BurgerIngredients onCardClick={toggleModal} data={data} />
         <BurgerConstructor data={data} />
       </main>
-      <Modal active={showModal} onCloseRequest={closeModal}>
-        <div className={styles.Card}>Example Modal Content</div>
-      </Modal>
     </div>
   );
 }

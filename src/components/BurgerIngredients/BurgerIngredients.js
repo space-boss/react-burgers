@@ -18,7 +18,13 @@ function BurgerIngredients(props) {
         <div className={`${styles.cardList} mt-6 `}>
           {props.data.map((item) => {
             if (item.type === "bun") {
-              return <IngredientCard data={item} key={item._id} />;
+              return (
+                <IngredientCard
+                  onCardClick={props.onCardClick}
+                  data={item}
+                  key={item._id}
+                />
+              );
             }
           })}
         </div>
@@ -28,7 +34,13 @@ function BurgerIngredients(props) {
         <div className={`${styles.cardList} mt-6 `}>
           {props.data.map((item) => {
             if (item.type === "sauce") {
-              return <IngredientCard data={item} key={item._id} />;
+              return (
+                <IngredientCard
+                  onCardClick={props.onCardClick}
+                  data={item}
+                  key={item._id}
+                />
+              );
             }
           })}
         </div>
@@ -38,7 +50,13 @@ function BurgerIngredients(props) {
         <div className={`${styles.cardList} mt-6 `}>
           {props.data.map((item) => {
             if (item.type === "main") {
-              return <IngredientCard data={item} key={item._id} />;
+              return (
+                <IngredientCard
+                  onClick={props.onCardClick}
+                  data={item}
+                  key={item._id}
+                />
+              );
             }
           })}
         </div>
@@ -46,9 +64,5 @@ function BurgerIngredients(props) {
     </section>
   );
 }
-
-BurgerIngredients.propTypes = {
-  data: propTypes.array,
-};
 
 export default BurgerIngredients;

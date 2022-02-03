@@ -14,7 +14,10 @@ function IngredientCard(props) {
   };
 
   return (
-    <div className={`${styles.card} ml-4 mr-2 mt-6 mb-8`}>
+    <div
+      onClick={props.onCardClick}
+      className={`${styles.card} ml-4 mr-2 mt-6 mb-8`}
+    >
       <img src={props.data.image} alt={props.data.name} />
       <button className={styles.button} onClick={handleCounterClick}>
         <Counter size="default" count={counterValue} />
