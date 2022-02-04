@@ -5,6 +5,7 @@ import AppHeader from "./AppHeader/AppHeader";
 import BurgerConstructor from "./BurgerConstructor/BurgerConstructor";
 import BurgerIngredients from "./BurgerIngredients/BurgerIngredients";
 import Modal from "../modal/modal";
+import ModalOverlay from "../modal/modalOverlay/modalOverlay";
 
 const BURGER_API_URL = "https://norma.nomoreparties.space/api/ingredients";
 
@@ -44,6 +45,7 @@ function App() {
   return (
     <div className={styles.app}>
       <Modal onClose={toggleModal} isOpen={isModalOpen} />
+      <ModalOverlay onClick={toggleModal} isOpen={isModalOpen} />
       <AppHeader />
       <main className={styles.main}>
         <BurgerIngredients onCardClick={toggleModal} data={data} />
