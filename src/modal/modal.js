@@ -15,6 +15,16 @@ function Modal(props) {
     return () => modalRoot.removeChild(el);
   }, []);
 
+  React.useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27 && props.isOpen) {
+        props.onClose();
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  });
+
   return ReactDOM.createPortal(
     <section
       className={`${styles.modal} ${modalOpenedClass} pt-10 pr-10 pb-15 pl-10`}
