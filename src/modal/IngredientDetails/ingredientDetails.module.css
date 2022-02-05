@@ -1,0 +1,35 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.subtitle {
+  color: #f2f2f3;
+}
+
+.values {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.value {
+  min-width: 112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.value:not(:last-child) {
+  margin-right: 20px;
+}
+
+.valueTitle {
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+}

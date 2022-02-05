@@ -9,13 +9,18 @@ function ConstructorList(props) {
     props.data.length > 0 && (
       <div className={`${styles.ingredientCards}`}>
         <div className={`${styles.bunCard} pl-5 pr-2`}>
-          <button className={styles.ingredientCard} onClick={props.onClick}>
+          <button
+            className={styles.ingredientCard}
+            onClick={props.onClick}
+            id={props.data[0]._id}
+          >
             <ConstructorElement
               type="top"
               isLocked={true}
               text={props.data[0].name + " (верх)"}
               price={props.data[0].price}
               thumbnail={props.data[0].image_mobile}
+              id={props.data[0]._id}
             />
           </button>
         </div>
@@ -27,6 +32,7 @@ function ConstructorList(props) {
                   key={index}
                   className={styles.ingredientCard}
                   onClick={props.onClick}
+                  id={item._id}
                 >
                   <div className={styles.card} key={item._id}>
                     <DragIcon className={styles.icon} type="primary" />
@@ -41,9 +47,14 @@ function ConstructorList(props) {
             }
           })}
         </div>
-        <button className={styles.ingredientCard} onClick={props.onClick}>
+        <button
+          className={styles.ingredientCard}
+          id={props.data[0]._id}
+          onClick={props.onClick}
+        >
           <div className={`${styles.bunCard} pl-5 pr-2`}>
             <ConstructorElement
+              id={props.data[0]._id}
               type="bottom"
               isLocked={true}
               text={props.data[0].name + " (низ)"}

@@ -14,56 +14,29 @@ import { IngredientDetails } from "../../modal/IngredientDetails/IngredientDetai
 function BurgerConstructor(props) {
   const [isOrderModalOpen, setIsOrderModalOpen] = React.useState(false);
   const [isIngredientModalOpen, setIngredientModalOpen] = React.useState(false);
-  /*   const [ingredientModalContent, setIngredientModalContent] = React.useState({
-    content: <></>,
-  }); */
+  const [ingredientModalContent, setIngredientModalContent] = React.useState(
+    <></>
+  );
+  const [itemId, setItemId] = React.useState("");
 
   const toggleOrderModal = () => {
     setIsOrderModalOpen(!isOrderModalOpen);
   };
 
-  const openIngredientModal = () => {
-    /*     const ingredientData = props.data.filter(
-      (item) => item._id === evt.currentTarget.id
+  const openIngredientModal = (evt) => {
+    const ingredientData = props.data.filter(
+      (item) => item._id === evt.currentTarget.id,
+      setItemId(evt.currentTarget.id)
     );
-    const ingredientContent = (
-      <IngredientDetails ingredientData={ingredientData[0]} />
-    );
-    setIngredientModalContent({ content: ingredientContent }); */
+
+    setIngredientModalContent(ingredientData);
     setIngredientModalOpen(true);
   };
 
   const closeIngredientModal = () => {
-    /*  setIngredientModalContent(<></>); */
+    setIngredientModalContent(<></>);
     setIngredientModalOpen(false);
   };
-
-  /*   function handleModalContent(evt) {
-    const ingredientData = props.data.filter(
-      (item) => item._id === evt.currentTarget.id
-    );
-    console.log(ingredientData);
-    return ingredientData;
-  }
-
-  const content = handleModalContent(); */
-
-  /* function handleModalContent(evt) {
-    let ingredientModalContent = <></>;
-
-    if (isOrderModalOpen) {
-      const ingredientData = props.data.filter(
-        (item) => item._id === evt.currentTarget.id
-      );
-      ingredientModalContent = (
-        <IngredientDetails ingredientData={ingredientData[0]} />
-      );
-      console.log(ingredientModalContent);
-      return ingredientModalContent;
-    }
-  }
-
-  handleModalContent(); */
 
   return (
     <>
@@ -83,8 +56,15 @@ function BurgerConstructor(props) {
         <OrderDetails />
       </Modal>
       <ModalOverlay onClick={toggleOrderModal} isOpen={isOrderModalOpen} />
-      <Modal onClose={closeIngredientModal} isOpen={isIngredientModalOpen}>
-        <IngredientDetails />
+      <Modal
+        onClose={closeIngredientModal}
+        isOpen={isIngredientModalOpen}
+        title="Детали ингредиента"
+      >
+        <IngredientDetails
+          ingredientContent={ingredientModalContent}
+          itemId={itemId}
+        />
       </Modal>
       <ModalOverlay
         onClick={closeIngredientModal}
