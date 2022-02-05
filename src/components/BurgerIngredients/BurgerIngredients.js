@@ -1,5 +1,6 @@
 import React from "react";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
+import { dataPropType } from "../../utils/proptypes";
 import styles from "./burgerIngredients.module.css";
 import NavBar from "./NavBar/NavBar";
 import IngredientCard from "./IngredientCard/IngredientCard";
@@ -64,5 +65,10 @@ function BurgerIngredients(props) {
     </section>
   );
 }
+
+BurgerIngredients.propTypes = {
+  data: PropTypes.arrayOf(dataPropType).isRequired,
+  onCardClick: PropTypes.func,
+};
 
 export default BurgerIngredients;

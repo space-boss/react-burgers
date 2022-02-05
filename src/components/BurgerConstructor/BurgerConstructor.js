@@ -1,7 +1,7 @@
-import React, { useCallback } from "react";
+import React from "react";
 import styles from "./burgerConstructor.module.css";
 import ConstructorList from "./ConstructorList/ConstructorList";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 import {
   Button,
   CurrencyIcon,
@@ -10,6 +10,7 @@ import Modal from "../../modal/modal";
 import ModalOverlay from "../../modal/modalOverlay/modalOverlay";
 import { OrderDetails } from "../../modal/OrderDetails/OrderDetails";
 import { IngredientDetails } from "../../modal/IngredientDetails/IngredientDetails";
+import { dataPropType } from "../../utils/proptypes";
 
 function BurgerConstructor(props) {
   const [isOrderModalOpen, setIsOrderModalOpen] = React.useState(false);
@@ -73,5 +74,9 @@ function BurgerConstructor(props) {
     </>
   );
 }
+
+BurgerConstructor.propTypes = {
+  data: PropTypes.arrayOf(dataPropType).isRequired,
+};
 
 export default BurgerConstructor;

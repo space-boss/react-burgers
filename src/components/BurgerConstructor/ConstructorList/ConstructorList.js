@@ -3,6 +3,8 @@ import {
   DragIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
 import styles from "./constructorList.module.css";
+import PropTypes from "prop-types";
+import { dataPropType } from "../../../utils/proptypes";
 
 function ConstructorList(props) {
   return (
@@ -67,5 +69,10 @@ function ConstructorList(props) {
     )
   );
 }
+
+ConstructorList.propTypes = {
+  data: PropTypes.arrayOf(dataPropType).isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default ConstructorList;
