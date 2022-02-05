@@ -9,7 +9,7 @@
   flex-direction: column;
   box-sizing: border-box;
   width: 720px;
-  height: 720px;
+  height: fit-content;
   justify-content: flex-start;
   align-items: center;
   text-align: left;
