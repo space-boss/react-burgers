@@ -14,52 +14,54 @@ function BurgerIngredients(props) {
     <section className={styles.section}>
       <h1 className="text text_type_main-large pt-10 pb-5">Соберите бургер</h1>
       <NavBar bunsRef={bunsRef} sauceRef={sauceRef} mainsRef={mainsRef} />
-      <div className="mt-10" ref={bunsRef}>
-        <h2 className="text text_type_main-medium mb-6">Булки</h2>
-        <div className={`${styles.cardList} mt-6 `}>
-          {props.data.map((item) => {
-            if (item.type === "bun") {
-              return (
-                <IngredientCard
-                  onCardClick={props.onCardClick}
-                  data={item}
-                  key={item._id}
-                />
-              );
-            }
-          })}
+      <div className={styles.ingredients}>
+        <div className="mt-10" ref={bunsRef}>
+          <h2 className="text text_type_main-medium mb-6">Булки</h2>
+          <div className={`${styles.cardList} mt-6 `}>
+            {props.data.map((item) => {
+              if (item.type === "bun") {
+                return (
+                  <IngredientCard
+                    onCardClick={props.onCardClick}
+                    data={item}
+                    key={item._id}
+                  />
+                );
+              }
+            })}
+          </div>
         </div>
-      </div>
-      <div className="mt-10" ref={sauceRef}>
-        <h2 className="text text_type_main-medium mb-6">Соусы</h2>
-        <div className={`${styles.cardList} mt-6 `}>
-          {props.data.map((item) => {
-            if (item.type === "sauce") {
-              return (
-                <IngredientCard
-                  onCardClick={props.onCardClick}
-                  data={item}
-                  key={item._id}
-                />
-              );
-            }
-          })}
+        <div className="mt-10" ref={sauceRef}>
+          <h2 className="text text_type_main-medium mb-6">Соусы</h2>
+          <div className={`${styles.cardList} mt-6 `}>
+            {props.data.map((item) => {
+              if (item.type === "sauce") {
+                return (
+                  <IngredientCard
+                    onCardClick={props.onCardClick}
+                    data={item}
+                    key={item._id}
+                  />
+                );
+              }
+            })}
+          </div>
         </div>
-      </div>
-      <div className="mt-10" ref={mainsRef}>
-        <h2 className="text text_type_main-medium mb-6">Начинки</h2>
-        <div className={`${styles.cardList} mt-6 `}>
-          {props.data.map((item) => {
-            if (item.type === "main") {
-              return (
-                <IngredientCard
-                  onClick={props.onCardClick}
-                  data={item}
-                  key={item._id}
-                />
-              );
-            }
-          })}
+        <div className="mt-10" ref={mainsRef}>
+          <h2 className="text text_type_main-medium mb-6">Начинки</h2>
+          <div className={`${styles.cardList} mt-6 `}>
+            {props.data.map((item) => {
+              if (item.type === "main") {
+                return (
+                  <IngredientCard
+                    onClick={props.onCardClick}
+                    data={item}
+                    key={item._id}
+                  />
+                );
+              }
+            })}
+          </div>
         </div>
       </div>
     </section>

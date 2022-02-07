@@ -6,10 +6,10 @@ import {
   Button,
   CurrencyIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
-import Modal from "../../modal/modal";
-import ModalOverlay from "../../modal/modalOverlay/modalOverlay";
-import { OrderDetails } from "../../modal/OrderDetails/OrderDetails";
-import { IngredientDetails } from "../../modal/IngredientDetails/IngredientDetails";
+import Modal from "../modal/modal";
+import ModalOverlay from "../modal/modalOverlay/modalOverlay";
+import { OrderDetails } from "../modal/OrderDetails/OrderDetails";
+import { IngredientDetails } from "../modal/IngredientDetails/IngredientDetails";
 import { dataPropType } from "../../utils/proptypes";
 
 function BurgerConstructor(props) {

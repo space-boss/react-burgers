@@ -1,5 +1,5 @@
 import styles from "./orderDetails.module.css";
-import checkImg from "../../images/order-done.svg";
+import checkImg from "../../../images/order-done.svg";
 
 export const OrderDetails = () => {
   return (

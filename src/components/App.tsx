@@ -17,17 +17,18 @@ function App() {
       setIsLoading(true);
       fetch(BURGER_API_URL)
         .then((res) => {
-          return res.json();
+          if (res.ok) {
+            return res.json();
+          }
+          return Promise.reject(`Error ${res.status}`);
         })
         .then((items) => {
-          console.log(items);
           setIsLoading(false);
           setData(items.data);
         })
         .catch(() => {
           setIsLoading(false);
           setLoadingError("Не удалось получить данные с сервера");
-          console.log(loadingError);
         });
     };
     getIngredients();
