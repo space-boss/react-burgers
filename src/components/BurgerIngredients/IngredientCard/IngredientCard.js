@@ -36,6 +36,8 @@ function IngredientCard(props) {
 
 IngredientCard.propTypes = {
   data: dataPropType.isRequired,
+  onClick: propTypes.func.isRequired,
+  id: propTypes.string.isRequired,
 };
 
 export default IngredientCard;

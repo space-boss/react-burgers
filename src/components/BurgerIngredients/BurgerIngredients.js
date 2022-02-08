@@ -115,7 +115,6 @@ function BurgerIngredients(props) {
 
 BurgerIngredients.propTypes = {
   data: PropTypes.arrayOf(dataPropType).isRequired,
-  onCardClick: PropTypes.func,
 };
 
 export default BurgerIngredients;

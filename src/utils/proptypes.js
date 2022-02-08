@@ -1,16 +1,25 @@
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
-export const dataPropType = propTypes.shape({
-  _id: propTypes.string.isRequired,
-  name: propTypes.string.isRequired,
-  type: propTypes.string.isRequired,
-  proteins: propTypes.number.isRequired,
-  fat: propTypes.number.isRequired,
-  carbohydrates: propTypes.number.isRequired,
-  calories: propTypes.number.isRequired,
-  price: propTypes.number.isRequired,
-  image: propTypes.string.isRequired,
-  image_mobile: propTypes.string.isRequired,
-  image_large: propTypes.string.isRequired,
-  __v: propTypes.number.isRequired,
+export const dataPropType = PropTypes.shape({
+  _id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  proteins: PropTypes.number.isRequired,
+  fat: PropTypes.number.isRequired,
+  carbohydrates: PropTypes.number.isRequired,
+  calories: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  image_mobile: PropTypes.string.isRequired,
+  image_large: PropTypes.string.isRequired,
+  __v: PropTypes.number.isRequired,
+});
+
+export const ingredientContentPropType = PropTypes.shape({
+  name: PropTypes.string,
+  proteins: PropTypes.number,
+  fat: PropTypes.number,
+  carbohydrates: PropTypes.number,
+  calories: PropTypes.number,
+  image_large: PropTypes.string,
 });
