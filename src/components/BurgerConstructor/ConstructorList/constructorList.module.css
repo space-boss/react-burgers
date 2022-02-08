@@ -5,22 +5,11 @@
   width: fit-content;
 }
 
-.ingredientCard {
-  cursor: pointer;
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
-
 .unlockedCards {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-height: 250px;
+  max-height: 400px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #2f2f37, #8585ad;

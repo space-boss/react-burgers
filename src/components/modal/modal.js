@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import "./modal.module.css";
 import styles from "./modal.module.css";
+import ModalOverlay from "./modalOverlay/modalOverlay";
 
 function Modal(props) {
   const modalOpenedClass = props.isOpen ? styles.modalActive : "";
@@ -26,17 +27,20 @@ function Modal(props) {
   });
 
   return ReactDOM.createPortal(
-    <section
-      className={`${styles.modal} ${modalOpenedClass} pt-10 pr-10 pb-15 pl-10`}
-    >
-      <div className={`${"text text_type_main-large"} ${styles.title}`}>
-        {props.title}
-      </div>
-      <button className={styles.closeButton} onClick={props.onClose}>
-        <CloseIcon type="primary" />
-      </button>
-      {props.children}
-    </section>,
+    <>
+      <section
+        className={`${styles.modal} ${modalOpenedClass} pt-10 pr-10 pb-15 pl-10`}
+      >
+        <div className={`${"text text_type_main-large"} ${styles.title}`}>
+          {props.title}
+        </div>
+        <button className={styles.closeButton} onClick={props.onClose}>
+          <CloseIcon type="primary" />
+        </button>
+        {props.children}
+      </section>
+      <ModalOverlay onClick={props.onClose} isOpen={props.isOpen} />
+    </>,
     modalRoot
   );
 }
