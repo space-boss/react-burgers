@@ -1,0 +1,36 @@
+.header {
+  width: 100vw;
+  margin-top: 40px;
+  background-color: #1c1c21;
+  padding: 24px 0;
+  height: 88px;
+  display: flex;
+}
+
+.menu {
+  display: flex;
+  width: 1240px;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menuElement {
+  display: flex;
+  flex-direction: row;
+  padding: 11px 20px 11px 0;
+}
+
+.menuBlock {
+  display: flex;
+  width: 33.333%;
+  flex-grow: 1;
+}
+
+.menuBlock:nth-of-type(2) {
+  justify-content: center;
+}
+
+.menuBlock:last-of-type {
+  justify-content: end;
+}

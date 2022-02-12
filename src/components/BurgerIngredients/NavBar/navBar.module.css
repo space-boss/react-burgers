@@ -1,0 +1,8 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab {
+  flex-grow: 1;
+}

@@ -1,0 +1,19 @@
+.section {
+  width: fit-content;
+  height: 100px;
+  text-align: left;
+}
+
+.total {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
