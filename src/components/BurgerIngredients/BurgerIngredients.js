@@ -7,6 +7,7 @@ import IngredientCard from "./IngredientCard/IngredientCard";
 import { IngredientDetails } from "../modal/IngredientDetails/IngredientDetails";
 import Modal from "../modal/modal";
 import ModalOverlay from "../modal/modalOverlay/modalOverlay";
+import { DataContext } from "../../services/appContext";
 
 function BurgerIngredients(props) {
   const bunsRef = React.useRef(null);
@@ -18,9 +19,10 @@ function BurgerIngredients(props) {
     <></>
   );
   const [itemId, setItemId] = React.useState("");
+  const { data } = React.useContext(DataContext);
 
   const openIngredientModal = (evt) => {
-    const ingredientData = props.data.filter(
+    const ingredientData = data.filter(
       (item) => item._id === evt.currentTarget.id,
       setItemId(evt.currentTarget.id)
     );
@@ -45,7 +47,7 @@ function BurgerIngredients(props) {
           <div className="mt-10" ref={bunsRef}>
             <h2 className="text text_type_main-medium mb-6">Булки</h2>
             <div className={`${styles.cardList} mt-6 `}>
-              {props.data.map((item) => {
+              {data.map((item) => {
                 if (item.type === "bun") {
                   return (
                     <IngredientCard
@@ -62,7 +64,7 @@ function BurgerIngredients(props) {
           <div className="mt-10" ref={sauceRef}>
             <h2 className="text text_type_main-medium mb-6">Соусы</h2>
             <div className={`${styles.cardList} mt-6 `}>
-              {props.data.map((item) => {
+              {data.map((item) => {
                 if (item.type === "sauce") {
                   return (
                     <IngredientCard
@@ -79,7 +81,7 @@ function BurgerIngredients(props) {
           <div className="mt-10" ref={mainsRef}>
             <h2 className="text text_type_main-medium mb-6">Начинки</h2>
             <div className={`${styles.cardList} mt-6 `}>
-              {props.data.map((item) => {
+              {data.map((item) => {
                 if (item.type === "main") {
                   return (
                     <IngredientCard
@@ -112,9 +114,9 @@ function BurgerIngredients(props) {
     </>
   );
 }
-
+/*
 BurgerIngredients.propTypes = {
   data: PropTypes.arrayOf(dataPropType).isRequired,
-};
+}; */
 
 export default BurgerIngredients;

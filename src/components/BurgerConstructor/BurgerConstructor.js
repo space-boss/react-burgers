@@ -11,7 +11,7 @@ import ModalOverlay from "../modal/modalOverlay/modalOverlay";
 import { OrderDetails } from "../modal/OrderDetails/OrderDetails";
 import { dataPropType } from "../../utils/proptypes";
 
-function BurgerConstructor(props) {
+function BurgerConstructor() {
   const [isOrderModalOpen, setIsOrderModalOpen] = React.useState(false);
 
   const toggleOrderModal = () => {
@@ -21,7 +21,7 @@ function BurgerConstructor(props) {
   return (
     <>
       <section className={`${styles.section} pt-25 pl-4 pr-4`}>
-        <ConstructorList data={props.data} />
+        <ConstructorList />
         <div className={`${styles.total} ${"mt-10 pr-2"}`}>
           <div className={`${styles.price} ${"mr-10"}`}>
             <div className={"text text_type_digits-medium mr-2"}>610</div>
@@ -41,7 +41,8 @@ function BurgerConstructor(props) {
 }
 
 BurgerConstructor.propTypes = {
-  data: PropTypes.arrayOf(dataPropType).isRequired,
+  /*
+  data: PropTypes.arrayOf(dataPropType).isRequired, */
   onClick: PropTypes.func,
 };
 
