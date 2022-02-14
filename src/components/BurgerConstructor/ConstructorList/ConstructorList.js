@@ -5,23 +5,27 @@ import {
 import styles from "./constructorList.module.css";
 import PropTypes from "prop-types";
 import { dataPropType } from "../../../utils/proptypes";
+import { DataContext } from "../../../services/appContext";
+import { useContext } from "react";
 
-function ConstructorList(props) {
+function ConstructorList() {
+  const { data } = useContext(DataContext);
+
   return (
-    props.data.length > 0 && (
+    data.length > 0 && (
       <div className={`${styles.ingredientCards}`}>
         <div className={`${styles.bunCard} pl-5 pr-2`}>
           <ConstructorElement
             type="top"
             isLocked={true}
-            text={props.data[0].name + " (верх)"}
-            price={props.data[0].price}
-            thumbnail={props.data[0].image_mobile}
-            id={props.data[0]._id}
+            text={data[0].name + " (верх)"}
+            price={data[0].price}
+            thumbnail={data[0].image_mobile}
+            id={data[0]._id}
           />
         </div>
         <div className={`${styles.unlockedCards} pr-2`}>
-          {props.data.map((item, index) => {
+          {data.map((item, index) => {
             if (item.type !== "bun") {
               return (
                 <div className={styles.card} key={item._id}>
@@ -39,12 +43,12 @@ function ConstructorList(props) {
 
         <div className={`${styles.bunCard} pl-5 pr-2`}>
           <ConstructorElement
-            id={props.data[0]._id}
+            id={data[0]._id}
             type="bottom"
             isLocked={true}
-            text={props.data[0].name + " (низ)"}
-            price={props.data[0].price}
-            thumbnail={props.data[0].image_mobile}
+            text={data[0].name + " (низ)"}
+            price={data[0].price}
+            thumbnail={data[0].image_mobile}
           />
         </div>
       </div>
@@ -52,8 +56,8 @@ function ConstructorList(props) {
   );
 }
 
-ConstructorList.propTypes = {
+/* ConstructorList.propTypes = {
   data: PropTypes.arrayOf(dataPropType).isRequired,
-};
+}; */
 
 export default ConstructorList;
